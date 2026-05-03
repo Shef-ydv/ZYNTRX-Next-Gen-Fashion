@@ -3,6 +3,8 @@ import Register from "../features/auth/pages/Register";
 import Login from "../features/auth/pages/Login";
 import CreateProduct from "../features/products/pages/createProduct";
 import Dashboard from "../features/products/pages/Dashboard";
+import Protected from "../features/auth/components/protected";
+import Home from "../features/products/pages/Home";
 import { Navigate } from "react-router";
 
 export const router=createBrowserRouter([
@@ -13,7 +15,7 @@ export const router=createBrowserRouter([
 
     {
         path:"/",
-        element:<h1>Hello World</h1>
+        element:<Home />
 
     },
     {
@@ -30,11 +32,15 @@ export const router=createBrowserRouter([
         children:[
             {
                 path:"/seller/create-product",
-                element:<CreateProduct />
+                element:<Protected
+                role="seller"
+                ><CreateProduct /></Protected>
             },
             {
                 path:"/seller/dashboard",
-                element:<Dashboard />
+                element:<Protected
+                role="seller"
+                ><Dashboard /></Protected>
             }
         ]
     }
