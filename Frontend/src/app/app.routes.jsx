@@ -6,6 +6,7 @@ import Dashboard from "../features/products/pages/Dashboard";
 import Protected from "../features/auth/components/protected";
 import Home from "../features/products/pages/Home";
 import { Navigate } from "react-router";
+import ProductDetail from "../features/products/pages/ProductDetail";
 
 export const router=createBrowserRouter([
     {
@@ -26,6 +27,10 @@ export const router=createBrowserRouter([
     {
         path:"/login",
         element:<Login />
+    },
+    {
+        path:"/product/:productId",
+        element:<ProductDetail />
     },
     {
         path:"/seller",
