@@ -7,6 +7,7 @@ import Protected from "../features/auth/components/protected";
 import Home from "../features/products/pages/Home";
 import { Navigate } from "react-router";
 import ProductDetail from "../features/products/pages/ProductDetail";
+import SellerProductDetails from "../features/products/pages/SellerProductDetails";
 
 export const router=createBrowserRouter([
     {
@@ -46,6 +47,12 @@ export const router=createBrowserRouter([
                 element:<Protected
                 role="seller"
                 ><Dashboard /></Protected>
+            },
+            {
+                path:"/seller/product/:productId",
+                element:<Protected
+                role="seller"
+                ><SellerProductDetails /></Protected>
             }
         ]
     }
