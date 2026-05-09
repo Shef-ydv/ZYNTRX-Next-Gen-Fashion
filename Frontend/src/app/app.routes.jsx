@@ -5,9 +5,11 @@ import CreateProduct from "../features/products/pages/createProduct";
 import Dashboard from "../features/products/pages/Dashboard";
 import Protected from "../features/auth/components/protected";
 import Home from "../features/products/pages/Home";
+import Cart from "../features/cart/pages/Cart";
 import { Navigate } from "react-router";
 import ProductDetail from "../features/products/pages/ProductDetail";
 import SellerProductDetails from "../features/products/pages/SellerProductDetails";
+import AppLayout from "./AppLayout";
 
 export const router=createBrowserRouter([
     {
@@ -15,11 +17,7 @@ export const router=createBrowserRouter([
     element: <Navigate to="/" replace />
     },
 
-    {
-        path:"/",
-        element:<Home />
-
-    },
+    
     {
         path:"/register",
         element:<Register />
@@ -30,8 +28,20 @@ export const router=createBrowserRouter([
         element:<Login />
     },
     {
+        element:<AppLayout />,
+        children:[
+            {
+        path:"/",
+        element:<Home />
+
+    },
+    {
         path:"/product/:productId",
         element:<ProductDetail />
+    },
+    {
+        path:"/cart",
+        element:<Protected><Cart /></Protected>
     },
     {
         path:"/seller",
@@ -54,6 +64,8 @@ export const router=createBrowserRouter([
                 role="seller"
                 ><SellerProductDetails /></Protected>
             }
+        ]
+    }
         ]
     }
 ])

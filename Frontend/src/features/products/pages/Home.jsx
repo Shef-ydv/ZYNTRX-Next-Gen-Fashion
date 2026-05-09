@@ -32,45 +32,7 @@ const Home = () => {
                 <div className="max-w-7xl mx-auto px-8 lg:px-16 xl:px-24">
                     {/* ── Hero / Header ── */}
                     {/* ── Top Navbar ── */}
-                    <div className="pt-10 pb-6 flex items-center justify-between">
-                        <button
-                            onClick={() => navigate(-1)}
-                            className="text-sm uppercase tracking-[0.2em] transition-colors duration-200"
-                            style={{ color: '#B5ADA3' }}
-                            onMouseEnter={e => e.currentTarget.style.color = '#C9A96E'}
-                            onMouseLeave={e => e.currentTarget.style.color = '#B5ADA3'}
-                        >
-                            ← Back
-                        </button>
-
-                        <span
-                            className="text-sm tracking-[0.35em] uppercase"
-                            style={{
-                                fontFamily: "'Cormorant Garamond', serif",
-                                color: '#C9A96E'
-                            }}
-                        >
-                            SNITCH.
-                        </span>
-
-                        <div className="text-sm" style={{ color: '#7A6E63' }}>
-                            {user ? (
-                                <>
-                                    Hello, <span style={{ color: '#1b1c1a' }}>{user.fullname}</span>
-                                </>
-                            ) : (
-                                <Link
-                                    to="/login"
-                                    className="transition-colors duration-200"
-                                    style={{ color: '#7A6E63' }}
-                                    onMouseEnter={e => e.currentTarget.style.color = '#C9A96E'}
-                                    onMouseLeave={e => e.currentTarget.style.color = '#7A6E63'}
-                                >
-                                    Login
-                                </Link>
-                            )}
-                        </div>
-                    </div>
+                    
                     <div className="max-w-7xl mx-auto px-8 lg:px-16 xl:px-24">
                     {/* ── Hero / Header ── */}
                     <div className="pt-20 pb-20 text-center flex flex-col items-center">
