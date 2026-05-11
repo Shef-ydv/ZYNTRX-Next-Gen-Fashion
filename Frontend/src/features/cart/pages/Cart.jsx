@@ -362,6 +362,7 @@ const Cart = () => {
                                 </div>
                             </div>
                         </div>
+                        {/* we need aggregation pipeloine for thepayment gateway */}
 
                         <div className="w-full lg:w-[35%] lg:sticky lg:top-28">
                             <div
