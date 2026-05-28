@@ -10,6 +10,7 @@ import { Navigate } from "react-router";
 import ProductDetail from "../features/products/pages/ProductDetail";
 import SellerProductDetails from "../features/products/pages/SellerProductDetails";
 import AppLayout from "./AppLayout";
+import OrderSuccess from "../features/cart/pages/OrderSuccess";
 
 export const router=createBrowserRouter([
     {
@@ -42,6 +43,10 @@ export const router=createBrowserRouter([
     {
         path:"/cart",
         element:<Protected><Cart /></Protected>
+    },
+    {
+        path:"/order-success",
+        element:<OrderSuccess />
     },
     {
         path:"/seller",
